@@ -1,0 +1,77 @@
+#include <iostream>
+#include <string>
+#include "stdio.h"
+#include "fstream"
+#include "ctime"
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	srand(time(NULL));
+
+	int* m, f;
+
+	cout << "Size: ";
+	f = rand() + 1;
+	m = new int[f];
+	for (int i = 0; i < f; i++)
+	{
+		m[i] = rand() % 100 + 1;
+	}
+
+	ofstream file("C:\\Users\\MubaTwo\\Desktop\\Lab1\\GG.txt");
+	if (!file)
+	{
+		cout << "Ошибка открытия файла";
+	}
+
+	else
+	{
+		cout << "Файл открытия:\n\n";
+	}
+
+	/*sorted*/
+
+	for (int i = 0; i < f; i++)
+	{
+		file << m[i] << endl;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/*
+	ifstream file("C:\\Users\\MubaTwo\\Desktop\\Lab1\\GG.txt");
+	if(!file)
+	{
+		cout << "Ошибка чтения файла";
+	}
+
+	else
+	{
+		cout << "Файл прочитан:\n\n";
+	}
+	file >> m[1];
+	cout << m[1];
+	file.close();
+
+	delete[] m;
+	*/
+}
